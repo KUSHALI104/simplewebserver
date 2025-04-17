@@ -42,65 +42,8 @@ content = """
 </body>
 </html>
 """
-class MyHandler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write(content.encode())
 
-# Set up and run the server
-def run(server_class=HTTPServer, handler_class=MyHandler, port=8000):
-    server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
-    print(f"Serving HTTP on port {port}...")
-    httpd.serve_forever()
 
-# Run the server
-if __name__ == '__main__':
-    run()
-content = """
-<html>
-<head>
-<title>Top five software companies in revenue</title>
-</head>
-<body>
-<h1 align="center">
-TOP FIVE SOFTWARE COMPANIES IN REVENUE</h1>
-<table align="center" border="2" cellspacing="5" cellpadding="5" width="800" height="500">
-<tr>
-<th>RANK</th>
-<th>COMPANY NAME</th>
-<th>REVENUE</th>
-</tr>
-<tr>
-<td>1</td>
-<td>Apple(AAPL)</td>
-<td>$385.70 B </td>
-</tr>
-<tr>
-<td>2</td>
-<td>Alphabet(Google)</td>
-<td>$307.39 B</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Microsoft</td>
-<td>$227.58 B</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Ibm</td>
-<td>$61.85 B</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Oracle</td>
-<td>$51.62 B</td>
-</tr>
-</table>
-</body>
-</html>
 
 
 
